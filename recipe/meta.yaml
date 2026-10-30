@@ -26,12 +26,17 @@ requirements:
     - numpy
 
 test:
+  source_files:
+    - test
+    - demo
   imports:
     - ufl
   requires:
     - pip
+    - pytest
   commands:
     - pip check
+    - python -m pytest -q test
 
 about:
   home: https://fenicsproject.org
