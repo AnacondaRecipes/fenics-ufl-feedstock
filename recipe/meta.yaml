@@ -36,13 +36,16 @@ test:
     - pytest
   commands:
     - pip check
+    - python -c "import ufl; assert ufl.__version__ == '{{ version }}'"
     - python -m pytest -q test
 
 about:
   home: https://fenicsproject.org
   license: LGPL-3.0-or-later
   license_family: LGPL
-  license_file: COPYING.LESSER
+  license_file:
+    - COPYING
+    - COPYING.LESSER
   summary: Unified Form Language
   description: |
     The Unified Form Language (UFL) is a domain specific language
